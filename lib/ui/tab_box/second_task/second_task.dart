@@ -11,8 +11,7 @@ class SecondTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NewsMultiCubit(
-          newsRepository: NewsRepository(apiService: ApiService())),
+      create: (context) => NewsMultiCubit(),
       child: BlocBuilder<NewsMultiCubit, NewsMultiState>(
         builder: (context, state) {
           return Scaffold(

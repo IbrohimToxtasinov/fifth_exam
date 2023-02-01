@@ -22,9 +22,7 @@ class App extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => NewsSingleStateCubit(
-              newsRepository: context.read<NewsRepository>(),
-            )..fetchNewInfo(),
+            create: (context) => NewsSingleStateCubit()..fetchNewInfo(),
           ),
           BlocProvider(
             create: (context) => ConnectivityCubit(),
