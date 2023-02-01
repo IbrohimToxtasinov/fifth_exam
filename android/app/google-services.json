@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "624783095647",
+    "project_id": "fifth-exam-ac0a9",
+    "storage_bucket": "fifth-exam-ac0a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624783095647:android:9c2634e94d7454de75e8ea",
+        "android_client_info": {
+          "package_name": "com.ibrohimdev.fifth_exam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624783095647-v3ak9s0n1mbbmkkhje8tfdhq9pm8junk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ibrohimdev.fifth_exam",
+            "certificate_hash": "dd33fb103562e75e0332b9f5bdb6b4a0953d8a26"
+          }
+        },
+        {
+          "client_id": "624783095647-oebcb4pta7em2vioj7toc3tvq136gv6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlapY5FZ4VClFYxMON7tAjdOTH4E5dNLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624783095647-oebcb4pta7em2vioj7toc3tvq136gv6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
