@@ -2,19 +2,19 @@ part of 'news_single_cubit.dart';
 
 // ignore: must_be_immutable
 class NewsSingleState extends Equatable {
-  Status? status;
-  String? error;
+  Status status;
+ final String error;
   NewsModel? newsModel;
 
   NewsSingleState({
-    this.status,
-    this.error,
+   required this.status,
+    required this.error,
     this.newsModel,
 });
 
   NewsSingleState copyWith({
     Status? status,
-    String? error,
+     String? error,
     NewsModel? newsModel,
   }) {
     return NewsSingleState(

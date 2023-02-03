@@ -1,8 +1,10 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:fifth_exam/state_manegers/cubit/connectivity/connectivity_cubit.dart';
 import 'package:fifth_exam/ui/no_internet/no_internet_screen.dart';
-import 'package:fifth_exam/ui/tab_box/first_task/first_screen.dart';
-import 'package:fifth_exam/ui/tab_box/second_task/second_task.dart';
+import 'package:fifth_exam/ui/tab_box/first_task/first_task_screen.dart';
+import 'package:fifth_exam/ui/tab_box/fourth_task/fourth_task_screen.dart';
+import 'package:fifth_exam/ui/tab_box/second_task/second_task_screen.dart';
+import 'package:fifth_exam/ui/tab_box/third_task/third_task_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,15 +27,18 @@ class _TabBoxState extends State<TabBox> {
     List screens = [
       FirstTaskScreen(),
       SecondTaskScreen(),
+      ThirdTaskScreen(),
+      FourthTaskScreen(),
     ];
     return BlocListener<ConnectivityCubit, ConnectivityState>(
       listener: (context, state) {
         if (state.connectivityResult == ConnectivityResult.none) {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => NoInternetScreen(voidCallback: _init),
-              ));
+            context,
+            MaterialPageRoute(
+              builder: (context) => NoInternetScreen(voidCallback: _init),
+            ),
+          );
         }
       },
       child: Scaffold(

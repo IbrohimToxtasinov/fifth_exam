@@ -1,8 +1,11 @@
 import 'package:fifth_exam/data/repositories/news_repository.dart';
+import 'package:fifth_exam/data/repositories/notification_repository.dart';
 import 'package:fifth_exam/data/services/api_service/api_service.dart';
 import 'package:fifth_exam/state_manegers/cubit/connectivity/connectivity_cubit.dart';
+import 'package:fifth_exam/state_manegers/cubit/get_notification/get_notification_cubit.dart';
 import 'package:fifth_exam/ui/tab_box/first_task/cubit/news_single_cubit.dart';
 import 'package:fifth_exam/ui/tab_box/tab_box.dart';
+import 'package:fifth_exam/utils/my_locale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,14 +18,21 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider(
           create: (context) => NewsRepository(
-            apiService: ApiService(),
+            apiService: getIt<ApiServices>(),
           ),
-        )
+        ),
+        RepositoryProvider(
+          create: (context) => BreakingNewsRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => NewsSingleStateCubit()..fetchNewInfo(),
+            create: (context) => NewsSingleStateCubit(
+                newsRepository: context.read<NewsRepository>()),
+          ),
+          BlocProvider(
+            create: (context) => BreakingNewsCubit(),
           ),
           BlocProvider(
             create: (context) => ConnectivityCubit(),
